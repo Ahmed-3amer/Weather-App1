@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="./images/6802349_climate_cloud_element_forecast_rain_icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <!-- navbar -->
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-dark"
+        >
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center justify-content-center text-white" href="index.html">
+                    <img src="images/logo.png" alt="Weather-logo" class="logo pt-1">
+                    <div class="logo-text ms-3 pt-4">
+                        <h5>Weather</h5>
+                        <p>tagline goes here</p>
+                    </div>
+                </a>
+                <button
+                    class="navbar-toggler d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item px-2">
+                            <a class="nav-link active text-center px-4 text-primary border border-2 border-primary rounded-pill" href="#" aria-current="page"
+                                >Home
+                                <span class="visually-hidden">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link text-white px-4 btn btn-outline-primary rounded-pill " href="#">News</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link text-white px-4 btn btn-outline-primary rounded-pill" href="#">Live Cameras</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link text-white px-4 btn btn-outline-primary rounded-pill" href="#">Photos</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link text-white px-4 btn btn-outline-primary rounded-pill" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                  
+                </div>
+            </div>
+        </nav>
+    </header>
+        <!-- weather search bar -->
+        <section>
+            <div class="container position-relative">
+                <div id="search-bar" class=" w-100 d-flex justify-content-center align-items-center position-absolute">
+                    <input type="text" id="searchInput" class="w-75 search-bar p-3 rounded-pill" placeholder="Find your city ...">
+                    <button id="searchBtn" class="rounded-circle ms-2"><i class="fa-solid fa-magnifying-glass fs-3 p-3"></i></button>
+                </div>
+            </div>
+             <!-- Weather Table -->   
+             <div class="weather-table pb-5">
+                <div class="container ">
+                    <div class="row">
+                        <!-- Today Data -->
+                        <div id="todayData" class="col-lg-4 col-md-6 px-0 rounded">
+                            <div class="todayinfo d-flex justify-content-between pt-2 text-light bg-dark px-3">
+                                <p id="todayDate"></p>
+                                <div>
+                                    <span id="dayNum"></span>
+                                    <span id="monthNum"></span>
+                                </div>
+                            </div>
+                            <div class="today-item-content p-3">
+                                <h6 id="city" class="text-light fs-5 py-3"></h6>
+                                <div class=" temp-info d-flex justify-content-between align-items-center">
+                                    <div class="d-flex text-light">
+                                        <p id="todayTemp"></p>
+                                        <span><sup>o</sup>C</span>
+                                    </div>
+                                    <img id="todayTempImg" src="./images/113.png" alt="temp-img">
+                                </div>
+                                <p id="todayTempText" class="text-light"></p>
+                             <div class="item-footer d-flex justify-content-around">
+                                <div>
+                                    <img src="images/icon-umberella.png" alt="umberella">
+                                    <span id="humidity" class="text-light"></span>
+                                </div>
+                                <div>
+                                    <img src="./images/icon-wind.png" alt="wind">
+                                    <span id="wind" class="text-light"></span>
+                                </div>
+                                <div>
+                                    <img src="./images/icon-compass.png" alt="compass">
+                                    <span id="windDirection" class="text-light"></span>
+                                </div>
+                             </div>
+                            </div>
+                        </div>
+                        <!-- Tomorrow Data -->
+                        <div id="tomorrowData" class="col-lg-4 col-md-6 text-center px-0">
+                            <div id="tomorrowDate" class="tomorrow-info pt-2 d-flex justify-content-center text-light bg-black">
+                                <p class="nextDayName"></p>
+                            </div>
+                            <div class="tomorrow-item-content">
+                                <img class="nextTempImg" src="images/113.png" alt="temp-img">
+                                <div class="text-white fs-2 py-2">
+                                    <span class="nextMaxTemp"></span>
+                                    <span><sup>o</sup>C</span>
+                                </div>
+                                <div class="text-light py-2">
+                                    <span class="nextMinTemp"></span>
+                                    <span><sup>o</sup>C</span>
+                                </div>
+                                <p class="nextTempText text-light py-2"></p>
+                            </div>
+                        </div>
+                        <!-- After Tomorrow Data -->
+                        <div id="afterTomorrowData" class="col-lg-4 col-md-6 text-center px-0">
+                            <div id="afterTomorrowDate" class="afterinfo  pt-2 d-flex justify-content-center text-light bg-dark">
+                                <p class="nextDayName"></p>
+                            </div>
+                            <div class="after-item-content">
+                                <img class="nextTempImg" src="images/113.png" alt="temp-img">
+                                <div class="text-white fs-2 py-2">
+                                    <span class="nextMaxTemp"></span>
+                                    <span><sup>o</sup>C</span>
+                                </div>
+                                <div class="text-light py-2">
+                                    <span class="nextMinTemp"></span>
+                                    <span><sup>o</sup>C</span>
+                                </div>
+                                <p class="nextTempText text-light py-2"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <!-- Start Footer -->
+        <footer id="contact" class="pt-3 pb-5">
+            <div class="container">
+                    <div class="row my-5">
+                            <div class="col-md-8">
+                                <form class="position-relative">
+                                    <input type="email" id="searchInput" class="w-100 p-3 rounded-pill border border-dark bg-dark" placeholder="Enter your email to subscribe ...">
+                                <input type="submit" class="submit-btn position-absolute rounded-pill border border-primary bg-primary" value="Subscribe">
+                                </form>
+                            </div>
+                        <div class="col-md-3 offset-1">
+                            <div class="social-links mt-1">
+                                <a href="" >
+                                    <i class="fa-brands fa-facebook-f ps-1"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-google-plus-g"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-brands fa-pinterest"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
