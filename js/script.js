@@ -35,7 +35,7 @@ function displayTodayData(data){
     todayMonth.innerHTML = todayDate.toLocaleDateString('en-US', {month:'long'});
     cityLocation.innerHTML = data.location.name;
     todayTemp.innerHTML = data.current.temp_c;
-    todayTempImg.setAttribute('src',data.current.condition.icon);
+    todayTempImg.setAttribute('src', 'https:' + data.current.condition.icon);
     todayTempText.innerHTML = data.current.condition.text;
     humidity.innerHTML = data.current.humidity + '%';
     wind.innerHTML = data.current.wind_kph +' '+ 'km/h';
@@ -52,7 +52,7 @@ function displaynextData(data){
         nextMaxTemp[i].innerHTML = forecastData[i+1].day.maxtemp_c;   
         nextMinTemp[i].innerHTML = forecastData[i+1].day.mintemp_c;
         nextTempText[i].innerHTML = forecastData[i+1].day.condition.text;
-        nextTempImg[i].setAttribute('src',forecastData[i+1].day.condition.icon);
+        nextTempImg[i].setAttribute('src', 'https:' + forecastData[i+1].day.condition.icon);
     }
 }
 
