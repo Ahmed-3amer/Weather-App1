@@ -51,7 +51,7 @@ a {
 
 /* Start Weather Section */
 .weather-table {
-    background-image: url("https://source.unsplash.com/1600x900/?landscape");
+    background-image: url("https://loremflickr.com/1600/900/city");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
